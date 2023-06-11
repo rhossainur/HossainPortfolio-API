@@ -1,0 +1,13 @@
+<!--Project part-->
+<p class="flex text-3xl font-bold">Personal Projects</p>
+<div class="py-6" *ngFor="let project of projects">
+    <a class="font-bold text-lg pb-2" href="{{project.urlPath}}" target="_blank">{{project.title}}</a>
+    <p style="white-space: pre-line">{{project.description}}</p>
+</div>
+
+<!--Certification part-->
+<p class="flex text-3xl font-bold pt-20">Certifications</p>
+<div class="py-6" *ngFor="let certification of certifications">
+    <a class="font-bold text-lg pb-2" href="{{certification.urlLink}}" target="_blank">{{certification.title}}</a>
+    <p class="text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">{{certification.receiveDate | date:'longDate'}}</p>
+</div>

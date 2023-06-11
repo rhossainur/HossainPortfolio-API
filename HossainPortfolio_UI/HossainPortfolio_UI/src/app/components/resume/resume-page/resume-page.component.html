@@ -1,0 +1,37 @@
+<!--work experience part-->
+<p class="flex text-3xl font-bold" [@revealAnimation]="state">Work Experience</p>
+<div class="flex pt-6" *ngFor="let workExperience of workExperiences">
+    <div class="w-1/6 px-1" *ngIf="workExperience.isCurrent">
+        <p class="text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">{{workExperience.from | date:'LLLL yyyy'}} - Present</p>
+    </div>
+    <div class="w-1/6 px-1" *ngIf="!workExperience.isCurrent">
+        <p class="text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">{{workExperience.from | date:'LLLL yyyy'}} - {{workExperience.to | date:'LLLL yyyy'}}</p>
+    </div>
+    <div class="w-5/6 px-1">
+        <p class="font-bold text-lg ">{{workExperience.title}}, {{workExperience.companyName}}</p>
+        <p class="text-lg text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">{{workExperience.location}}</p>
+        <p style="white-space: pre-line">{{workExperience.description}}</p>
+    </div>
+</div>
+
+<!--skill part-->
+<p class="flex text-3xl font-bold pt-10" [@revealAnimation]="state">Skills</p>
+<div class="flex flex-wrap pt-6">
+    <span class="dark:text-slate-950 text-slate-100 leading-none align-baseline whitespace-nowrap py-1 px-2 mx-2 my-2 rounded-full font-bold bg-slate-950 dark:bg-neutral-200 text-center" *ngFor="let skill of skills">{{skill}}</span>
+</div>
+
+<!--education part-->
+<p class="flex text-3xl font-bold pt-10" [@revealAnimation]="state">Education</p>
+<div class="flex p-6" *ngFor="let education of educations">
+    <div class="w-1/6 px-1">
+        <p class="text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">{{education.from | date:'LLLL yyyy'}} - {{education.to | date:'LLLL yyyy'}}</p>
+    </div>
+    <div class="w-5/6 px-1">
+        <p class="text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50 text-lg">University</p>
+        <p class="font-bold text-lg ">{{education.university}}</p>
+        <br>
+        <p class="text-lg text-slate-950 dark:text-slate-100 text-opacity-50 dark:text-opacity-50">Degree</p>
+        <p class="font-bold text-lg ">{{education.degree}}</p>
+    </div>
+</div>
+

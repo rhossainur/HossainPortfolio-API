@@ -1,0 +1,61 @@
+<main
+  class="min-h-screen text-slate-950 dark:text-slate-100 bg-[url('assets/images/graph-paper.svg')] dark:bg-[url('assets/images/graph-paper-dark.svg')] pt-6 dark:bg-slate-950 bg-neutral-200">
+  <div class="">
+    <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
+      <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+          <a class="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase" routerLink="" (click)="toggleNavbar2()">
+            <img src="assets/images/logo.png" class="h-10 w-10 animate-pulse">
+          </a>
+          <button
+            class="bg-[url('assets/images/menu.svg')] dark:bg-[url('assets/images/menu-dark.svg')] cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button" (click)="toggleNavbar()">
+          </button>
+        </div>
+        <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+          <ul class="flex flex-col lg:flex-row list-none ml-auto">
+            <li class="px-4 py-2 nav-item">
+              <a class="flex-row items-center  font-bold leading-snug hover:opacity-75 group transition duration-300"
+                routerLink="project" (click)="toggleNavbar2()">
+                Project
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              </a>
+            </li>
+            <li class="px-4 py-2 nav-item">
+              <a class="flex-row items-center   font-bold leading-snug hover:opacity-75 group transition duration-300"
+                routerLink="resume" (click)="toggleNavbar2()">
+                Resume
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              </a>
+            </li>
+            <li class="px-4 py-2 nav-item">
+              <a class="flex-row items-center  font-bold leading-snug hover:opacity-75 group transition duration-300"
+                href="mailto:rhossainur123@gmail.com?Subject=Hi, let's connect!" (click)="toggleNavbar2()">
+                Contact
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="flex justify-start transition-all duration-300 px-12 pb-12"
+      [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+  <footer class="flex min-w-full justify-center items-end fixed bottom-0 pb-2 pt-2 bg-[url('assets/images/graph-paper.svg')] dark:bg-[url('assets/images/graph-paper-dark.svg')] dark:bg-slate-950 bg-neutral-200">
+    <a class="rounded-full px-6" target="_blank" href="https://leetcode.com/hossainur/">
+      <img class="block dark:hidden h-6 w-6" src="assets/images/leetcode.png">
+      <img class="hidden dark:block h-6 w-6" src="assets/images/leetcode-dark.png">
+    </a>
+    <a class="rounded-full px-6" target="_blank" href="https://www.linkedin.com/in/hossainur-rahaman/">
+      <img class="block dark:hidden h-6 w-6" src="assets/images/linkedin.png">
+      <img class="hidden dark:block h-6 w-6" src="assets/images/linkedin-dark.png">
+    </a>
+    <a class="rounded-full px-6" target="_blank" href="https://github.com/rhossainur">
+      <img class="block dark:hidden h-6 w-6" src="assets/images/github.png">
+      <img class="hidden dark:block h-6 w-6" src="assets/images/github-dark.png">
+    </a>
+</footer>
+</main>
